@@ -17,4 +17,10 @@ public class Baekjun17213 {
 		}
 		return i*combination(i-1,j-1)/j;
 	}
+//	private static int combination(int i, int j) {
+//		if(j==0 || i==j) {
+//			return 1;
+//		}
+//		return combination(i-1,j-1)+combination(i-1,j);
+//	}
 }

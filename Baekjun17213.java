@@ -11,16 +11,16 @@ public class Baekjun17213 {
 		System.out.println(combination(n-1,r-1));
 	}
 
+//	private static int combination(int i, int j) { // 이게 더 빠른데...
+//		if(j==0 || i==j) {
+//			return 1;
+//		}
+//		return i*combination(i-1,j-1)/j;
+//	}
 	private static int combination(int i, int j) {
 		if(j==0 || i==j) {
 			return 1;
 		}
-		return i*combination(i-1,j-1)/j;
+		return combination(i-1,j-1)+combination(i-1,j);
 	}
-//	private static int combination(int i, int j) {
-//		if(j==0 || i==j) {
-//			return 1;
-//		}
-//		return combination(i-1,j-1)+combination(i-1,j);
-//	}
 }

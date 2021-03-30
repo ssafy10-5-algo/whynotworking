@@ -82,7 +82,7 @@ public class Baekjun1799_3rd {
 			int dx = abishop[0]-place[0];
 			int dy = abishop[1]-place[1];
 			bishop.add(abishop);
-			if (dx==dy || dx==-dy) {
+			if (dx==dy) {
 				return false;
 			}
 		}

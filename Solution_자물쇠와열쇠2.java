@@ -50,7 +50,7 @@ public class Solution_자물쇠와열쇠2 {
     	checking();
         return answer;
     }
-	private void rotate() {
+	private void rotate() { // 열쇠 회전
 		int size = keycell.size();
 		for (int i = 0; i < size; i++) {
 			int[] cell = keycell.poll();
@@ -62,19 +62,19 @@ public class Solution_자물쇠와열쇠2 {
 			for (int j = 1-M; j < N; j++) {
 				boolean checkin = true;
 				int correct = 0;
-				for (int[] cell : keycell) {
+				for (int[] cell : keycell) { // 돌기들에 대해 확인
 					int x = i+cell[0];
 					int y = j+cell[1];
-					if (x>=N || x<0 || y>=N || y<0) {
+					if (x>=N || x<0 || y>=N || y<0) { // 삐져나가도 괜찮음
 						continue;
 					}
-					if (keycheck[x][y]) {
+					if (keycheck[x][y]) { // 돌기랑 돌기가 만나서 이건 안열림
 						checkin=false;
 						break;
 					}
-					correct++;
+					correct++; // 자물쇠 홈 채운수 증가
 				}
-				if (checkin && correct==count) {
+				if (checkin && correct==count) { // 돌기랑 안만났고 홈을 전부 채웠다.
 					answer = true;
 					return;
 				}
